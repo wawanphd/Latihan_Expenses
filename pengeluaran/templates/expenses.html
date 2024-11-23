@@ -27,26 +27,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>2024-01-15</td>
-                    <td>Food</td>
-                    <td>Lunch at restaurant</td>
-                    <td>$25.00</td>
-                    <td>
-                        <button class="btn btn-sm btn-primary">Edit</button>
-                        <button class="btn btn-sm btn-danger">Delete</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2024-01-14</td>
-                    <td>Transportation</td>
-                    <td>Bus fare</td>
-                    <td>$5.00</td>
-                    <td>
-                        <button class="btn btn-sm btn-primary">Edit</button>
-                        <button class="btn btn-sm btn-danger">Delete</button>
-                    </td>
-                </tr>
+                {% for x in  data %}
+                    <tr>
+                        <td>{{ x.date }}</td>
+                        <td>{{ x.category }}</td>
+                        <td>{{ x.description }}</td>
+                        <td>Rp. {{ x.amount }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
