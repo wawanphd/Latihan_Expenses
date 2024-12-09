@@ -34,8 +34,16 @@
                         <td>{{ x.description }}</td>
                         <td>Rp. {{ x.amount }}</td>
                         <td>
-                            <button class="btn btn-sm btn-primary">Edit</button>
-                            <button class="btn btn-sm btn-danger">Delete</button>
+
+                            <a href="{% url 'form_update_expenses' x.id %}" class="btn btn-sm btn-primary">
+                                Edit
+                            </a>
+
+                            <a href="{% url 'delete_expenses' x.id %}" class="btn btn-sm btn-danger">
+                                Delete
+                            </a>
+
+
                         </td>
                     </tr>
                 {% endfor %}
